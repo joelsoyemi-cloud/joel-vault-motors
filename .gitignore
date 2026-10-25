@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+.sites-runtime/
+.vercel/
+*.tsbuildinfo
+.env*
+!.env.example
+
+# Reproducible offline render intermediates
+/tools/render-models/
+/tools/node_modules/
+/public/**/*.png
+
+# Extracted by prebuild/predev from the versioned showroom bundle
+/public/models/
+/public/drapes/
+/public/posters/
+/public/reveals/
+/public/fonts/

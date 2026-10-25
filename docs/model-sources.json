@@ -1,0 +1,125 @@
+[
+  {
+    "id": "chevrolet-camaro-pro",
+    "brand": "Chevrolet",
+    "model": "Camaro Pro",
+    "years": [
+      1970,
+      1970
+    ],
+    "category": "wagon",
+    "file": "chevrolet-camaro-pro.glb",
+    "bytes": 2889092,
+    "paint": {
+      "materials": [
+        "body"
+      ],
+      "textured": false,
+      "confidence": "m\u00e9dia"
+    },
+    "credit": {
+      "author": "everhard",
+      "authorUrl": "https://sketchfab.com/everhard",
+      "license": "CC Attribution",
+      "sourceName": "1970 Chevrolet Camaro Pro Touring",
+      "sourceUrl": "https://sketchfab.com/3d-models/none-dfad2dbf7db0401bb4cad60f657ff765"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/chevrolet-camaro-pro.glb"
+  },
+  {
+    "id": "chevrolet-corvette",
+    "brand": "Chevrolet",
+    "model": "Corvette",
+    "years": [
+      2000,
+      2024
+    ],
+    "category": "sports",
+    "file": "chevrolet-corvette.glb",
+    "bytes": 1256440,
+    "paint": {
+      "materials": [
+        "nodamage"
+      ],
+      "textured": true,
+      "confidence": "alta"
+    },
+    "credit": {
+      "author": "sharingan",
+      "authorUrl": "https://sketchfab.com/luci-fan",
+      "license": "CC Attribution",
+      "sourceName": "Lucifer's Corvette - 1960 Chevrolet Corvette C1",
+      "sourceUrl": "https://sketchfab.com/3d-models/507ee2e6d6a34a3db7bf8373c70fecff"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/chevrolet-corvette.glb"
+  },
+  {
+    "id": "mercedes-benz-300sl-gullwing",
+    "brand": "Mercedes-Benz",
+    "model": "300sl Gullwing",
+    "years": [
+      0,
+      0
+    ],
+    "category": "coupe",
+    "file": "mercedes-benz-300sl-gullwing.glb",
+    "bytes": 5352796,
+    "paint": null,
+    "credit": {
+      "author": "vecarz",
+      "authorUrl": "https://sketchfab.com/heynic",
+      "license": "CC Attribution",
+      "sourceName": "Mercedes-Benz 300sl Gullwing | www.vecarz.com",
+      "sourceUrl": "https://sketchfab.com/3d-models/none-65edd5814c9842bb9c769388d13fa27f"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/mercedes-benz-300sl-gullwing.glb"
+  },
+  {
+    "id": "lamborghini-countach-25th",
+    "brand": "Lamborghini",
+    "model": "Countach 25th",
+    "years": [
+      1989,
+      1989
+    ],
+    "category": "coupe",
+    "file": "lamborghini-countach-25th.glb",
+    "bytes": 3249468,
+    "paint": null,
+    "credit": {
+      "author": "Ddiaz Design",
+      "authorUrl": "https://sketchfab.com/ddiaz-design",
+      "license": "CC Attribution",
+      "sourceName": "1989 Lamborghini Countach 25th Anniversary",
+      "sourceUrl": "https://sketchfab.com/3d-models/none-75acd9a580574e128c0886d2bc5a2b21"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/lamborghini-countach-25th.glb"
+  },
+  {
+    "id": "porsche-911",
+    "brand": "Porsche",
+    "model": "911 Turbo",
+    "years": [
+      1975,
+      1989
+    ],
+    "category": "sports",
+    "file": "porsche-911.glb",
+    "bytes": 2383144,
+    "paint": {
+      "materials": [
+        "Material.002"
+      ],
+      "textured": false,
+      "confidence": "alta"
+    },
+    "credit": {
+      "author": "Lexyc16",
+      "authorUrl": "https://sketchfab.com/Lexyc16",
+      "license": "CC Attribution",
+      "sourceName": "Porsche 911 (930) Turbo 1975",
+      "sourceUrl": "https://sketchfab.com/3d-models/de1ffd344c41481892511f7fd332c136"
+    },
+    "downloadUrl": "https://raw.githubusercontent.com/pedrosoandre/carros/main/assets/porsche-911.glb"
+  }
+]

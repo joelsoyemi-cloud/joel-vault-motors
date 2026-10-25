@@ -1,0 +1,29 @@
+{
+  "name": "joel-vault-motors",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "node scripts/unpack-assets.mjs",
+    "predev": "node scripts/unpack-assets.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.185.0",
+    "babel-plugin-react-compiler": "1.0.0",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
