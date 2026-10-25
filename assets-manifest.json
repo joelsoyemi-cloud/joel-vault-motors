@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "totalAssets": 516,
+  "parts": [
+    {
+      "file": "showroom-v2-model-camaro.json.gz",
+      "assets": 1,
+      "bytes": 2256462,
+      "sha256": "43e93d6586934e2468d4452aeb1f7857c8a0e0b123912f7d03f9ae86fcc03739"
+    },
+    {
+      "file": "showroom-v2-model-corvette.json.gz",
+      "assets": 7,
+      "bytes": 1409313,
+      "sha256": "37ecdc3c0c815676daf2d4992f347d5de9e8955ddae68c00fb7b4c756d06801c"
+    },
+    {
+      "file": "showroom-v2-model-countach.json.gz",
+      "assets": 1,
+      "bytes": 2910644,
+      "sha256": "478596ca64d40ea0461b9f9136eaaa5bf54d22c796dc327367b265688d682a93"
+    },
+    {
+      "file": "showroom-v2-model-gullwing.json.gz",
+      "assets": 1,
+      "bytes": 5314968,
+      "sha256": "6f18289e5b66f90d88f0cd52d9b6cf97deefc862c0dca2436e395a182630dbf2"
+    },
+    {
+      "file": "showroom-v2-model-turbo.json.gz",
+      "assets": 1,
+      "bytes": 2353257,
+      "sha256": "dcb33511034e0e3857ba0f88a8554730de9dcafa15de3aaf60cd4acc728e4910"
+    },
+    {
+      "file": "showroom-v2-scenes-camaro.json.gz",
+      "assets": 101,
+      "bytes": 3202215,
+      "sha256": "1c1dc7097d8ba38d5a5cb09d1bfec29adf156e59144fafd115071cac34325aa3"
+    },
+    {
+      "file": "showroom-v2-scenes-corvette.json.gz",
+      "assets": 101,
+      "bytes": 3459593,
+      "sha256": "f46cc4925b4c1e0e5ac45035473c45c9500f911e3cc9f2fd0c95306340f467a7"
+    },
+    {
+      "file": "showroom-v2-scenes-countach.json.gz",
+      "assets": 101,
+      "bytes": 3460725,
+      "sha256": "e4a6567c4af25d2c17d7f3c786a19b6876223774a8593a57c189aaf930ddb02c"
+    },
+    {
+      "file": "showroom-v2-scenes-gullwing.json.gz",
+      "assets": 101,
+      "bytes": 3283755,
+      "sha256": "1073f8f0090d68a99c4ce62ce38c7bc8564f9d19ea64bf4c269836a8f312d53d"
+    },
+    {
+      "file": "showroom-v2-scenes-turbo.json.gz",
+      "assets": 101,
+      "bytes": 3191192,
+      "sha256": "fdd6bf4888fa5ec6955d13fd0484328bb35358d902eb87b779981c148ec5a19d"
+    }
+  ]
+}

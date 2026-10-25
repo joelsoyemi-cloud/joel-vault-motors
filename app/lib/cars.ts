@@ -8,9 +8,3 @@ export const CARS:Car[] = [
 ];
 export const clamp=(v:number,a=0,b=1)=>Math.max(a,Math.min(b,v));
 export const smooth=(v:number)=>{v=clamp(v);return v*v*(3-2*v)};
-export function cameraPose(car:Car,p:number,angle='signature'){
- const t=smooth(p);let a=car.start+car.sweep*t;let h=car.elevation+car.height*t;let r=8.2+.8*t;
- if(car.id==='countach')r=5.2+4*t;
- if(angle==='front'){a=.55;h=1.85;r=8.4;}if(angle==='rear'){a=3.55;h=2.1;r=8.4;}if(angle==='top'){a=1.5;h=8.8;r=3.8;}if(angle==='wheel'){a=2.4;h=.9;r=7.4;}
- return {x:Math.cos(a)*r,y:h,z:Math.sin(a)*r,targetY:.65};
-}

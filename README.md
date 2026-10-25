@@ -1,20 +1,20 @@
 # VAULT — The Vintage Motor Collection
 
-An independent cinematic automotive design study by **Joel Soyemi**. Five classic cars share a dark architectural showroom with a satin cover reveal and individually choreographed camera paths.
+An interactive automotive study by **Joel Soyemi**. Five vintage cars occupy five full-screen chapters, followed by their stories and design details.
 
-## Experience
+[Live website](https://vintagemotors.vercel.app/)
 
-- 1960 Chevrolet Corvette C1 — low front to profile
-- 1970 Chevrolet Camaro Pro Touring — rear to front sweep
-- Mercedes-Benz 300 SL Gullwing — overhead to three-quarter (1954 design debut)
-- 1989 Lamborghini Countach 25th Anniversary — wheel level to wide
-- 1975 Porsche 911 (930) Turbo — high rear to low front
+## The experience
 
-Drag horizontally, scroll slowly, or use the accessible reveal timeline. Play, pause, reverse, reset and change cars. Live 3D also supports front, rear, above and wheel viewpoints. The cover and camera are deterministic functions of the same progress value, so reversing retraces the animation.
+Scroll vertically from Corvette to Camaro, 300 SL, Countach and 911 Turbo. Each chapter fills the viewport. Drag horizontally or use its timeline to reveal the car. Play, pause, reverse and reset work independently for each car; vertical scrolling remains normal page navigation.
 
-A 33-frame rendered sequence per car supports browsers without WebGL. These frames use the same real car models and reveal choreography. Alternate viewpoint buttons require the live WebGL showroom. Ambient audio starts only after an explicit click. The site respects reduced motion and pauses animation when the tab is hidden.
+The fabric uses **Blender cloth simulation** with body collision, self collision, a soft corner pull and subtle air movement. The surface is 0.5 mm thick. Forty-nine sampled cloth meshes per car are stored as compact 16-bit positions and interpolated in Three.js, so moving backward retraces the same motion. The former rigid cover deformation has been removed.
 
-## Development
+Actual convex silhouette points control framing, keeping the vehicles prominent through different viewpoints. Browsers without WebGL use 49 rendered frames per car in landscape and portrait formats (490 frames total). Five complete stories below the reveals include origin, body style and design features. A separate car-picker dialog is no longer part of the experience.
+
+Only the visible chapter loads a live renderer. Leaving it disposes the scene and stops playback. Reduced motion is respected; manual timeline scrubbing remains available. Sound starts only after an explicit click.
+
+## Run and deploy
 
 Node 20.9 or later:
 
@@ -27,23 +27,35 @@ npm run dev
 npm run build
 ```
 
-Next.js exports the site to `out/`. Deploy through Vercel's GitHub integration; push to `main` for production updates. There are no API keys or server dependencies.
+Next.js exports the site into `out/`. Vercel uses the Next.js preset, the repository root and `npm run build`. No environment variables are required.
 
-### Binary assets
-
-The GitHub copy stores all models, drape data, self-hosted fonts, posters and rendered reveal frames in `showroom-assets.json.gz`. `prebuild` and `predev` restore the exact files into `public/` using Node's built-in gzip decoder. `ASSETS.md` records the file inventory and checksums. Sites source checkouts also retain the individual public assets. The bundle avoids a large browser upload of hundreds of binary files and is not a runtime network dependency.
+The `prebuild` and `predev` scripts unpack ten `showroom-v2-*.json.gz` bundles using Node's built-in gzip decoder. `assets-manifest.json` lists the exact bundle checksums and expected counts. `ASSETS.md` contains the individual file inventory. All 516 assets are present in the repository; the bundles are build inputs, not runtime network dependencies.
 
 ## Source
 
-- `app/lib/cars.ts`: collection and camera paths
-- `app/lib/showroom.ts`: Three.js room, lighting, GLB loading and reversible fabric deformation
-- `app/components/Showroom.tsx`: live renderer with rendered sequence fallback
-- `app/components/Vault.tsx`: controls, dialogs, audio and progress
-- `tools/render.py`: offline Blender renderer (Blender 4.5; uncompressed GLB inputs)
-- `tools/decode.mjs`: build-time conversion for Blender (`npm install --prefix tools`, then `node tools/decode.mjs`). Render with `blender -b --python tools/render.py -- posters` and `-- sequences`.
+- `app/components/CarChapter.tsx`: independent reveal controls and playback
+- `app/components/Vault.tsx`: scroll-based chapter activation, stories and credits
+- `app/components/Showroom.tsx`: live scene with responsive rendered fallback
+- `app/lib/showroom.ts`: Three.js room, model loading and baked cloth playback
+- `app/lib/framing.ts` and `vehicle-geometry.json`: silhouette-based framing
+- `app/lib/stories.ts`: vehicle context and distinguishing details
 
-The cloth is an art-directed surface sampled from the car body, with reversible deformation; it is not a real-time physics simulation. Rendered fallback lighting uses Cycles, so minor lighting differences from the live Three.js scene are expected.
+## Reproduce the visuals
+
+The website build does not require Blender or Python. To regenerate visual assets, install Blender 4.5 and Python with Pillow, then:
+
+```sh
+npm install --prefix tools
+node tools/decode.mjs
+blender -b --python tools/framing-geometry.py
+blender -b --python tools/render.py -- all
+python tools/finish-frames.py
+python tools/pack-assets.py all
+python tools/pack-assets.py manifest
+```
+
+`render.py -- simulate` bakes only the cloth. `-- sample corvette` renders five checkpoints for one car. The simulation and intermediate PNG cache are ignored by Git. When replacing scene files, bump `SCENE_VERSION` in `app/lib/assets.ts` to refresh browser caches. Cycles and the live renderer have different lighting implementations; the underlying models and cloth motion are shared.
 
 ## Credits
 
-See [CREDITS.md](CREDITS.md) for model authors, original sources and CC BY 4.0 licensing. The site includes a visible credits panel. The project is not affiliated with any vehicle manufacturer. No sales, bookings or performance claims are implied.
+See [CREDITS.md](CREDITS.md) for model authors and CC BY 4.0 source links. A visible credits panel is included in the website. Vehicle names identify the subjects of this independent study.

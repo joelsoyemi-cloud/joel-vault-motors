@@ -36,7 +36,7 @@ Distributed in web-ready Meshopt-compressed form by https://github.com/pedrosoan
 
 ## Adaptation
 
-The library compressed and optimized the source models. VAULT normalizes their scale/orientation, adjusts material roughness, and adds new lighting, environment, camera choreography, a reversible satin cover, and rendered sequences. The original artists retain attribution for the underlying 3D models and their depiction in all generated frames.
+The library compressed and optimized the source models. VAULT normalizes their scale/orientation, adjusts material roughness, and adds new lighting, environment, camera choreography, a physically simulated satin cover, and rendered sequences. The original artists retain attribution for the underlying 3D models and their depiction in all generated frames.
 
 ## Fonts
 
@@ -45,3 +45,7 @@ DM Sans and Italiana are distributed under the SIL Open Font License. License co
 ## Historical date
 
 The Gullwing model has no specific year in its source title. The site uses its 1954 design debut, verified against Mercedes-Benz USA: https://media.mbusa.com/news/sport-luxury-lifestyle-the-mercedes-benz-sl
+
+## Cloth and framing
+
+The new cloth motion was simulated in Blender, baked to 49 mesh samples per vehicle, and rendered in two screen formats. The site interpolates these samples for reversible playback. Rendered image crops and live camera framing use convex silhouette points extracted from the same normalized models.
