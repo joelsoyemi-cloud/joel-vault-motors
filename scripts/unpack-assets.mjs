@@ -7,7 +7,7 @@ if(!existsSync(manifestFile))throw new Error('The showroom asset manifest is mis
 const manifest=JSON.parse(readFileSync(manifestFile,'utf8'));
 const root=resolve('public');let count=0;
 for(const part of manifest.parts){
- if(!/^showroom-v2-(model|scenes)-[a-z-]+\.json\.gz$/.test(part.file))throw new Error('Invalid asset bundle name.');
+ if(!/^showroom-v[23]-(?:(?:model|scenes)-[a-z-]+|environment)\.json\.gz$/.test(part.file))throw new Error('Invalid asset bundle name.');
  const file=resolve(part.file);if(!existsSync(file))throw new Error(`Missing showroom bundle: ${part.file}`);
  const bytes=readFileSync(file);if(createHash('sha256').update(bytes).digest('hex')!==part.sha256)throw new Error(`Showroom bundle checksum failed: ${part.file}`);
  const assets=JSON.parse(gunzipSync(bytes).toString('utf8'));

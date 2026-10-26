@@ -49,3 +49,12 @@ The Gullwing model has no specific year in its source title. The site uses its 1
 ## Cloth and framing
 
 The new cloth motion was simulated in Blender, baked to 49 mesh samples per vehicle, and rendered in two screen formats. The site interpolates these samples for reversible playback. Rendered image crops and live camera framing use convex silhouette points extracted from the same normalized models.
+
+## Photographed studio lighting
+
+Studio Small 03 by Greg Zaal / Poly Haven, CC0.
+
+- https://polyhaven.com/a/studio_small_03
+- https://polyhaven.com/license
+
+VAULT recalculates smooth mesh normals and calibrates paint, chrome, glass, rubber and interior materials. The photographed environment, large softboxes and curved concrete cyclorama replace the former ceiling-strip room.

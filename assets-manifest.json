@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "totalAssets": 516,
+  "version": 3,
+  "totalAssets": 277,
   "parts": [
     {
       "file": "showroom-v2-model-camaro.json.gz",
@@ -33,34 +33,40 @@
       "sha256": "dcb33511034e0e3857ba0f88a8554730de9dcafa15de3aaf60cd4acc728e4910"
     },
     {
-      "file": "showroom-v2-scenes-camaro.json.gz",
-      "assets": 101,
-      "bytes": 3202215,
-      "sha256": "1c1dc7097d8ba38d5a5cb09d1bfec29adf156e59144fafd115071cac34325aa3"
+      "file": "showroom-v3-environment.json.gz",
+      "assets": 1,
+      "bytes": 1485641,
+      "sha256": "a08e12d73afd0e14c7cc9476f99f9d7403f47def1d388a18ab04a4352bcaeda1"
     },
     {
-      "file": "showroom-v2-scenes-corvette.json.gz",
-      "assets": 101,
-      "bytes": 3459593,
-      "sha256": "f46cc4925b4c1e0e5ac45035473c45c9500f911e3cc9f2fd0c95306340f467a7"
+      "file": "showroom-v3-scenes-camaro.json.gz",
+      "assets": 53,
+      "bytes": 2694396,
+      "sha256": "5835e119a36508eaa3b57f42bfa6efbe0f3acb08ace7efe92248d2dc61b40bcc"
     },
     {
-      "file": "showroom-v2-scenes-countach.json.gz",
-      "assets": 101,
-      "bytes": 3460725,
-      "sha256": "e4a6567c4af25d2c17d7f3c786a19b6876223774a8593a57c189aaf930ddb02c"
+      "file": "showroom-v3-scenes-corvette.json.gz",
+      "assets": 53,
+      "bytes": 2681172,
+      "sha256": "dfd17356f45283a3b3ba279a9d74893c9fdf251144c65a8eb2f9575d9a15b83f"
     },
     {
-      "file": "showroom-v2-scenes-gullwing.json.gz",
-      "assets": 101,
-      "bytes": 3283755,
-      "sha256": "1073f8f0090d68a99c4ce62ce38c7bc8564f9d19ea64bf4c269836a8f312d53d"
+      "file": "showroom-v3-scenes-countach.json.gz",
+      "assets": 53,
+      "bytes": 2654088,
+      "sha256": "6e0d011dc1d62bbba975b2085542f615834f1e33731f143e7215ba172a58b074"
     },
     {
-      "file": "showroom-v2-scenes-turbo.json.gz",
-      "assets": 101,
-      "bytes": 3191192,
-      "sha256": "fdd6bf4888fa5ec6955d13fd0484328bb35358d902eb87b779981c148ec5a19d"
+      "file": "showroom-v3-scenes-gullwing.json.gz",
+      "assets": 53,
+      "bytes": 1923383,
+      "sha256": "eebb12315cfe77960ea9ab2b1ebb9fcdee773a45e8fa5276c8cdd9a26946099d"
+    },
+    {
+      "file": "showroom-v3-scenes-turbo.json.gz",
+      "assets": 53,
+      "bytes": 2228156,
+      "sha256": "9e58a94ed169424ca818f26a736e9b7f2af83ba34d26e5a6b1af9d54f87a02da"
     }
   ]
 }

@@ -21,3 +21,6 @@ out/
 /public/films/
 /public/motion/
 /tools/sim-cache/
+
+/tools/__pycache__/
+/public/environment/
