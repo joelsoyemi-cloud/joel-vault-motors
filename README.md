@@ -10,7 +10,7 @@ A photographed studio environment, broad softboxes and a curved concrete cyclora
 
 The cover uses the existing Blender cloth bake with body and self collision. Forty-nine 16-bit mesh poses per car interpolate continuously in Three.js. The reveal completes at 72% of the scroll chapter; the camera continues moving through the remaining portion.
 
-The active chapter owns one live renderer, which releases its resources when the next chapter takes over. Browsers without WebGL use responsive studio films with 25 frames per format, crossfading between adjacent views. Reduced motion presents shorter, static chapters with optional keyboard-accessible view timelines. Sound starts only after a click. Five editorial stories and model credits follow the collection.
+The active chapter owns one live renderer, which releases its resources when the next chapter takes over. Browsers without WebGL use responsive studio films with 25 frames per format, showing the nearest complete view to keep bodywork and wheels crisp. Reduced motion presents shorter, static chapters with optional keyboard-accessible view timelines. Sound starts only after a click. Five editorial stories and model credits follow the collection.
 
 ## Run and deploy
 

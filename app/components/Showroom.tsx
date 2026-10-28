@@ -6,9 +6,9 @@ import {frameCar,VEHICLES} from '../lib/framing';
 import {revealAt} from '../lib/timeline';
 import type {Stage} from '../lib/showroom';
 let gpuSupported:boolean|undefined;
-function Frame({car,n,opacity=1}:{car:Car;n:number;opacity?:number}){
+function Frame({car,n}:{car:Car;n:number}){
  const size=VEHICLES[car.id].size;
- return <picture style={{opacity,'--landscape-zoom':frameCar(car,n/FILM_LAST,1.6,size).zoom,'--portrait-zoom':frameCar(car,n/FILM_LAST,.5,size).zoom} as React.CSSProperties}><source media="(max-width:700px)" srcSet={sceneFrame(car.id,'portrait',n)}/><img src={sceneFrame(car.id,'landscape',n)} alt="" draggable={false}/></picture>
+ return <picture style={{'--landscape-zoom':frameCar(car,n/FILM_LAST,1.6,size).zoom,'--portrait-zoom':frameCar(car,n/FILM_LAST,.5,size).zoom} as React.CSSProperties}><source media="(max-width:700px)" srcSet={sceneFrame(car.id,'portrait',n)}/><img src={sceneFrame(car.id,'landscape',n)} alt="" draggable={false}/></picture>
 }
 export default function Showroom({car,progress,angle,active}:{car:Car;progress:number;angle:string;active:boolean}){
  const canvas=useRef<HTMLCanvasElement>(null),stage=useRef<Stage|null>(null),values=useRef({progress,angle});const [live,setLive]=useState(false);values.current={progress,angle};
@@ -28,6 +28,7 @@ export default function Showroom({car,progress,angle,active}:{car:Car;progress:n
   const load=()=>{if(cancelled||next>=order.length)return;const img=new Image();img.onload=img.onerror=load;img.src=sceneFrame(car.id,format,order[next++]);images.push(img)};for(let i=0;i<3;i++)load();
   return()=>{cancelled=true;images.forEach(img=>{img.onload=null;img.onerror=null})};
  },[active,car.id,live]);
- const f=clamp(progress)*FILM_LAST,lo=Math.floor(f),hi=Math.min(FILM_LAST,lo+1);
- return <div className="showroom" role="img" aria-label={`${car.year} ${car.brand} ${car.name}, ${Math.round(revealAt(progress)*100)} percent revealed`}><img className="scene-ambience" src={`/posters/${car.id}-v3.webp`} alt="" loading="lazy" draggable={false}/><div className={`film ${live?'film-hidden':''}`}><Frame car={car} n={lo}/><Frame car={car} n={hi} opacity={f-lo}/></div>{active?<canvas ref={canvas} className={live?'stage-canvas ready':'stage-canvas'} aria-hidden="true"/>:null}<div className="stage-vignette"/></div>
+ // A single complete view avoids doubled bodywork and wheels between baked frames.
+ const frame=Math.round(clamp(progress)*FILM_LAST);
+ return <div className="showroom" role="img" aria-label={`${car.year} ${car.brand} ${car.name}, ${Math.round(revealAt(progress)*100)} percent revealed`}><img className="scene-ambience" src={`/posters/${car.id}-v3.webp`} alt="" loading="lazy" draggable={false}/><div className={`film ${live?'film-hidden':''}`}><Frame car={car} n={frame}/></div>{active?<canvas ref={canvas} className={live?'stage-canvas ready':'stage-canvas'} aria-hidden="true"/>:null}<div className="stage-vignette"/></div>
 }
